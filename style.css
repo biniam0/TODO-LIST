@@ -1,0 +1,117 @@
+:root {
+  --light-purple: #6c63ff;
+}
+body {
+  margin: 10% 20%;
+}
+.header {
+  text-align: center;
+}
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.nav-bar input {
+  border: 2px solid var(--light-purple);
+  border-radius: 5px;
+  height: 35px;
+  width: 75%;
+  padding: 0 0;
+}
+.drop-items {
+  color: white;
+  border-color: var(--light-purple);
+  border-radius: 5px;
+  background-color: var(--light-purple);
+  width: 20%;
+}
+.nav-bar .size-5 {
+  position: relative;
+  left: -45px;
+  bottom: -3px;
+  color: var(--light-purple);
+  height: 30px;
+  width: 30px;
+}
+.nav-bar .size-6 {
+  border-color: var(--light-purple);
+  background-color: var(--light-purple);
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  width: 6%;
+}
+.note-list ul {
+  padding-left: 0px;
+}
+
+.note-list ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.note-list ul li .note-name {
+  display: flex;
+  gap: 20px;
+}
+.icons {
+  align-self: center;
+  margin-bottom: 0px;
+}
+
+hr {
+  color: var(--light-purple);
+}
+.note-list ul li input {
+  border-color: var(--light-purple);
+  width: 20px;
+}
+.add-note svg {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--light-purple);
+  color: white;
+}
+.modal {
+  display: grid;
+  justify-self: center;
+  position: absolute;
+  top: 35%;
+
+  background-color: rgb(228, 237, 244);
+  border-radius: 10px;
+  width: 60%;
+  max-width: 500px;
+  height: 30%;
+}
+.modal h3 {
+  text-align: center;
+  margin: 30px 30px;
+}
+.modal input {
+  display: grid;
+  justify-self: center;
+  margin: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 30px;
+  width: 70%;
+  height: 30px;
+  border: 3px solid var(--light-purple);
+  border-radius: 5px;
+}
+.modal .new-note-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.new-note-btn button {
+  margin: 20px 20px;
+  height: 25px;
+  background-color: var(--light-purple);
+  border: var(--light-purple);
+  border-radius: 5px;
+  color: white;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <h2 class="header">TODO LIST</h2>
+    <div class="nav-bar">
+      <input type="text" placeholder="Search note..." />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="size-5"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+
+      <select name="All" class="drop-items">
+        <option value="all">ALL</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+        <p>Pending</p>
+        <p>Completed</p>
+      </select>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+        />
+      </svg>
+      <div class="theme"></div>
+    </div>
+    <div class="note-list">
+      <ul>
+        <li>
+          <div class="note-name">
+            <input type="checkbox" />
+            <h3>NOTE #1</h3>
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-pencil"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </li>
+        <hr />
+        <li>
+          <div class="note-name">
+            <input type="checkbox" />
+            <h3>NOTE #2</h3>
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-pencil"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </li>
+        <hr />
+        <li>
+          <div class="note-name">
+            <input type="checkbox" />
+            <h3>NOTE #3</h3>
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-pencil"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </li>
+        <hr />
+        <li>
+          <div class="note-name">
+            <input type="checkbox" />
+            <h3>NOTE #4</h3>
+          </div>
+          <div class="icons">
+            <i class="fa-solid fa-pencil"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="add-note">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
+    </div>
+    <div class="modal">
+      <h3>NEW NOTE</h3>
+      <input type="text" placeholder="Input your note..." />
+      <div class="new-note-btn">
+        <button>CANCEL</button>
+        <button>APPLY</button>
+      </div>
+    </div>
+  </body>
+</html>
