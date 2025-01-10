@@ -1,8 +1,42 @@
 :root {
   --light-purple: #6c63ff;
+  --search-border: #6c63ff;
+  --hover-dark-purple: #5850dd;
+  --white: #ffff;
+  --gray-white: #eaeaea;
+  --red-hover: red;
+  --modal-bg: var(--white);
+  --search-icon: var(--light-purple);
 }
+.darkmode {
+  /* theme based colors */
+  --dark-bg: #252525;
+  --search-border: var(--white);
+  --modal-bg: var(--dark-bg);
+  background-color: var(--dark-bg);
+  color: var(--white);
+  --search-bg: var(--dark-bg);
+  --search-icon: var(--white);
+}
+* {
+  box-sizing: border-box;
+}
+html,
 body {
-  margin: 10% 20%;
+  margin: 0;
+  padding: 0;
+}
+
+/* body.dark {
+  background-color: var(--dark-bg);
+} */
+
+main {
+  padding: 40px 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .header {
   text-align: center;
@@ -12,38 +46,124 @@ body {
   justify-content: center;
   gap: 10px;
 }
+
 .nav-bar input {
-  border: 2px solid var(--light-purple);
+  border: 2px solid var(--search-border);
+  background-color: var(--search-bg);
   border-radius: 5px;
-  height: 35px;
-  width: 75%;
+  height: 33px;
+  width: 100%;
   padding: 0 0;
+  position: relative;
 }
+.search-container {
+  position: relative;
+  width: 80%;
+}
+
+.size-5 {
+  position: absolute;
+  top: 12%;
+  right: 5px;
+  color: var(--search-icon);
+  height: 25px;
+  width: 25px;
+  padding-right: 0px;
+}
+
 .drop-items {
-  color: white;
+  color: var(--white);
   border-color: var(--light-purple);
   border-radius: 5px;
   background-color: var(--light-purple);
+  width: 15%;
+  height: 32px;
+}
+
+/* ===================== */
+.custom-select {
+  position: relative;
+  font-family: Arial;
   width: 20%;
 }
-.nav-bar .size-5 {
-  position: relative;
-  left: -45px;
-  bottom: -3px;
-  color: var(--light-purple);
-  height: 30px;
-  width: 30px;
+
+.custom-select select {
+  background-color: var(--gray-white);
+  display: none; /*hide original SELECT element: */
 }
+
+.select-selected {
+  border-radius: 5px;
+  height: 33px;
+  background-color: var(--light-purple);
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: var(--white);
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--white);
+  border: 2px solid var(--light-purple);
+  border-radius: 4px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgb(167, 167, 255);
+}
+/* ===================== */
+
 .nav-bar .size-6 {
   border-color: var(--light-purple);
   background-color: var(--light-purple);
   border-radius: 5px;
-  color: white;
-  height: 40px;
-  width: 6%;
+  color: var(--white);
+  height: 32px;
+  width: 9%;
+  font-weight: lighter;
+}
+.size-6:hover {
+  background-color: var(--hover-dark-purple);
 }
 .note-list ul {
-  padding-left: 0px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .note-list ul li {
@@ -66,6 +186,26 @@ hr {
   border-color: var(--light-purple);
   width: 20px;
 }
+.fa-trash-can,
+.fa-pencil {
+  padding-right: 10px;
+  color: var(--gray-white);
+}
+.fa-pencil:hover {
+  color: var(--light-purple);
+}
+.fa-trash-can:hover {
+  color: var(--red-hover);
+}
+
+.empty-list {
+  display: none;
+}
+.empty-list,
+.empty-list h3 {
+  justify-self: center;
+}
+
 .add-note svg {
   position: absolute;
   bottom: 60px;
@@ -73,25 +213,52 @@ hr {
   height: 30px;
   border-radius: 50%;
   background-color: var(--light-purple);
-  color: white;
+  color: var(--white);
+  cursor: pointer;
 }
+.size-6:hover {
+  background-color: var(--hover-dark-purple);
+}
+
+#theme2 {
+  display: none;
+}
+.darkmode #theme1 {
+  display: none;
+}
+.darkmode #theme2 {
+  display: block;
+}
+
 .modal {
+  background-color: rgb(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__hidden {
+  display: none;
+}
+.modal__content {
   display: grid;
   justify-self: center;
   position: absolute;
-  top: 35%;
-
-  background-color: rgb(228, 237, 244);
+  top: 25%;
+  background-color: var(--modal-bg);
+  border: 1px solid var(--white);
   border-radius: 10px;
   width: 60%;
   max-width: 500px;
-  height: 30%;
 }
-.modal h3 {
+.modal__content h3 {
   text-align: center;
   margin: 30px 30px;
 }
-.modal input {
+.modal__content input {
   display: grid;
   justify-self: center;
   margin: 10px;
@@ -100,18 +267,32 @@ hr {
   margin-bottom: 30px;
   width: 70%;
   height: 30px;
-  border: 3px solid var(--light-purple);
+  border: 1.5px solid var(--search-border);
+  background-color: var(--dark-bg);
   border-radius: 5px;
 }
-.modal .new-note-btn {
+.modal__content .new-note-btn {
   display: flex;
   justify-content: space-between;
 }
-.new-note-btn button {
+
+.btn1 button {
+  margin: 20px 20px;
+  height: 25px;
+  border: 2px solid var(--light-purple);
+  background-color: var(--btn1-color);
+  border-radius: 3px;
+  padding: 0 20px;
+  font-weight: bolder;
+  color: var(--light-purple);
+}
+.btn2 button {
   margin: 20px 20px;
   height: 25px;
   background-color: var(--light-purple);
   border: var(--light-purple);
-  border-radius: 5px;
-  color: white;
+  border-radius: 3px;
+  padding: 0 20px;
+  font-weight: bolder;
+  color: var(--white);
 }

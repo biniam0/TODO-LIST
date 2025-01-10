@@ -10,116 +10,143 @@
     <link rel="stylesheet" href="style.css" />
     <style></style>
   </head>
-  <body>
-    <h2 class="header">TODO LIST</h2>
-    <div class="nav-bar">
-      <input type="text" placeholder="Search note..." />
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        class="size-5"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
-          clip-rule="evenodd"
-        />
-      </svg>
+  <body >
+    <main>
+      <h2 class="header">TODO LIST</h2>
+      <!-- <button id="show-modal">Random</button> -->
+      <div class="nav-bar">
+        <div class="search-container">
+          <input type="text" placeholder="   Search note..." />
+          <!-- search icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="size-5"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <select
+          name="All"
+          class="drop-items"
+        >
+          <option id="all" value="all">All</option>
+          <option value="complete">Complete</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+        <!-- ==================== -->
+        <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+        <!-- <div class="custom-select">
+          <select name="ALL" style="color: white;">
+            <option >All</option>
+            <option >All</option>
+            <option value="complete">Complete</option>
+            <option value="incomplete">Incomplete</option>
+          </select>
+        </div> -->
+        <!-- ==================== -->
 
-      <select name="All" class="drop-items">
-        <option value="all">ALL</option>
-        <option value="pending">Pending</option>
-        <option value="completed">Completed</option>
-        <p>Pending</p>
-        <p>Completed</p>
-      </select>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
-        />
-      </svg>
-      <div class="theme"></div>
-    </div>
-    <div class="note-list">
-      <ul>
-        <li>
-          <div class="note-name">
-            <input type="checkbox" />
-            <h3>NOTE #1</h3>
+        <!-- dark theme icon -->
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          height="24px" viewBox="0 -960 960 960" 
+          width="24px" 
+          fill="#e8eaed"
+          class="size-6"
+          id="theme1">
+          <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+        </svg>
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          height="24px" 
+          viewBox="0 -960 960 960" 
+          width="24px" 
+          fill="#e8eaed"
+          class="size-6"
+          id="theme2">
+          <path 
+            d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/>
+        </svg>
+      </div>
+      <div class="note-list">
+        <ul>
+          <li>
+            <div class="note-name">
+              <input type="checkbox" />
+              <h3>NOTE #1</h3>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+          </li>
+          <hr />
+          <li>
+            <div class="note-name">
+              <input type="checkbox" />
+              <h3>NOTE #2</h3>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+          </li>
+          <hr />
+          <li>
+            <div class="note-name">
+              <input type="checkbox" />
+              <h3>NOTE #3</h3>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-pencil"></i>
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+          </li>
+          <hr />
+        </ul>
+      </div>
+      <div class="empty-list">
+        <img src="Images/search.png" alt="">
+        <h3>Empty...</h3>
+      </div>
+      <div class="add-note">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+          id="show-modal"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"
+          />
+        </svg>
+      </div>
+    </main>
+    <div class="modal modal__hidden">
+      <div class="modal__content">
+        <h3>NEW NOTE</h3>
+        <input type="text" placeholder="Input your note..." />
+        <div class="new-note-btn">
+          <div id="cancel" class="btn1">
+            <button>CANCEL</button>
           </div>
-          <div class="icons">
-            <i class="fa-solid fa-pencil"></i>
-            <i class="fas fa-trash"></i>
+          <div class="btn2">
+            <button>APPLY</button>
           </div>
-        </li>
-        <hr />
-        <li>
-          <div class="note-name">
-            <input type="checkbox" />
-            <h3>NOTE #2</h3>
-          </div>
-          <div class="icons">
-            <i class="fa-solid fa-pencil"></i>
-            <i class="fas fa-trash"></i>
-          </div>
-        </li>
-        <hr />
-        <li>
-          <div class="note-name">
-            <input type="checkbox" />
-            <h3>NOTE #3</h3>
-          </div>
-          <div class="icons">
-            <i class="fa-solid fa-pencil"></i>
-            <i class="fas fa-trash"></i>
-          </div>
-        </li>
-        <hr />
-        <li>
-          <div class="note-name">
-            <input type="checkbox" />
-            <h3>NOTE #4</h3>
-          </div>
-          <div class="icons">
-            <i class="fa-solid fa-pencil"></i>
-            <i class="fas fa-trash"></i>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="add-note">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 4.5v15m7.5-7.5h-15"
-        />
-      </svg>
-    </div>
-    <div class="modal">
-      <h3>NEW NOTE</h3>
-      <input type="text" placeholder="Input your note..." />
-      <div class="new-note-btn">
-        <button>CANCEL</button>
-        <button>APPLY</button>
+        </div>
       </div>
     </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
