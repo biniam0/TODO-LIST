@@ -12,4 +12,4 @@ Simple TODO list webapp
 - **Backend**: Coming Soon!  
 
 ## 👨‍💻 **Contributor**   
-- [Jaleta Kebede](https://github.com/biniam0)  
+- [Bini](https://github.com/biniam0)  
