@@ -29,7 +29,7 @@ function displayNotes() {
             <li>
               <div class="note-name">
                 <input id="checkbox-${index}" class="checkbox" type="checkbox"/>
-                <h3>${value}</h3>
+                <h3 id="note-text-${index}" >${value}</h3>
               </div>
               <div class="icons">
                 <i id="edit-${index}" class="fa-solid fa-pencil edit"></i>
@@ -51,13 +51,17 @@ function editNote(index) {
 
 // Delete notes
 function deleteNote() {
-  note_array.splice(index, 1)
-  displayNotes()
+  
 }
 
 // Strike notes
-function strikeNote() {
-  
+function strikeNote(idx) {
+  const text = document.querySelector(`#note-text-${idx}`)
+  const val = document.querySelector(`#note-text-${idx}`).innerHTML
+  text.innerHTML = 
+    `
+      <del>${val}</del>
+    `
 }
 
 // Function Call
@@ -126,11 +130,21 @@ if (darkmode === "active") {
 // Add Notes 
 document.querySelector("#apply").addEventListener("click", addNote)
 
-// Checkbox
+// Checkbox, Edit and Delete
 const ul_wrapper = document.getElementById("notes")
 ul_wrapper.addEventListener("click", (e) => {
-  const checkbox = e.target.nodeName === "INPUT"
-  console.log(e.target.id)
+  const clicked_btn = e.target.id
+  const [btn_name, idx] = clicked_btn.split("-")
+
+  if (btn_name == "checkbox") {
+    strikeNote(idx)
+  }
+  else if (btn_name == "edit") {
+    editNote(idx)
+  }
+  if (btn_name == "delete") {
+    deleteNote(idx)
+  }
 })
 
 // Edit Notes
@@ -151,7 +165,6 @@ document.querySelector("#apply").addEventListener("click", toggleModal);
 // ===========TASKS===============
 // What happen if there is not notes
 // Note can be deleted and edited
-// If note is checked strike the note with straight line
 // 
 
 

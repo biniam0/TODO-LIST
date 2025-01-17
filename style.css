@@ -64,7 +64,7 @@ main {
 .size-5 {
   position: absolute;
   top: 12%;
-  right: 5px;
+  right: 8px;
   color: var(--search-icon);
   height: 25px;
   width: 25px;
